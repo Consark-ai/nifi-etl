@@ -1,0 +1,11 @@
+{
+  "flow" : {
+    "createdTimestamp" : 1754311792825,
+    "description" : "Generate an ETL to pull TB data into supernova",
+    "identifier" : "SkinLaundry-TrialBalance",
+    "lastModifiedTimestamp" : 1754311792825,
+    "name" : "SkinLaundry-TrialBalance",
+    "versionCount" : 0
+  },
+  "latest" : false
+}
