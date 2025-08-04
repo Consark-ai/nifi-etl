@@ -1,0 +1,11 @@
+{
+  "flow" : {
+    "createdTimestamp" : 1754312026636,
+    "description" : "Consark pipelines to alter the etl",
+    "identifier" : "Consark-test-pipelines",
+    "lastModifiedTimestamp" : 1754312026636,
+    "name" : "Consark-test-pipelines",
+    "versionCount" : 0
+  },
+  "latest" : false
+}
