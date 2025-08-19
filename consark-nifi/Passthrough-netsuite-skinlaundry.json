@@ -1,4 +1,5 @@
 {
+  "externalControllerServices" : { },
   "flow" : {
     "createdTimestamp" : 1755601076834,
     "description" : "",
@@ -7,5 +8,1502 @@
     "name" : "Passthrough-netsuite-skinlaundry",
     "versionCount" : 0
   },
-  "latest" : false
+  "flowContents" : {
+    "comments" : "",
+    "componentType" : "PROCESS_GROUP",
+    "connections" : [ {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "c1f77874-0198-1000-c3ed-d4196a56bb2a",
+        "name" : "UpdateAttribute",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "6549c0e1-083d-310d-8bdf-933ff3e33aba",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "" ],
+      "source" : {
+        "groupId" : "flow-contents-group",
+        "id" : "f90cbb33-7682-39f8-b3ae-7673bd1a3219",
+        "name" : "Passthrough Entry Point",
+        "type" : "INPUT_PORT"
+      },
+      "zIndex" : 6
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "groupId" : "flow-contents-group",
+        "id" : "1f0fe48b-dadf-3181-bbda-6e3612dbd005",
+        "name" : "Passthrough Exit Port",
+        "type" : "OUTPUT_PORT"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "887fcd35-54cc-33ec-9da6-7263cfd0569f",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "matched" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "c1f7786e-0198-1000-382b-f33d3cbfa708",
+        "name" : "EvaluateJsonPath",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 7
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "c1f7786e-0198-1000-382b-f33d3cbfa708",
+        "name" : "EvaluateJsonPath",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "c1f77877-0198-1000-babf-9caf317e153d",
+      "labelIndex" : 1,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "c1f7786f-0198-1000-8bd1-5c03c24c13b8",
+        "name" : "JSLTTransformJSON",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "c1f77870-0198-1000-3ee5-697bcd61c0da",
+        "name" : "InvokeHTTP",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "c1f77878-0198-1000-5160-aeae9a515abd",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "c1f77873-0198-1000-c5ca-d839ecab421b",
+        "name" : "Update the request body ",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 5
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "c1f77875-0198-1000-1e90-616b0426d46c",
+        "name" : "JSLTTransformJSON",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "c1f77879-0198-1000-e4d2-9eb1b01699c5",
+      "labelIndex" : 1,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "c1f77872-0198-1000-ac99-95a5e135937d",
+        "name" : "AttributesToJSON",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "c1f77873-0198-1000-c5ca-d839ecab421b",
+        "name" : "Update the request body ",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "c1f7787a-0198-1000-5550-9821c04501d9",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "hasMore" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "c1f77876-0198-1000-3383-7007c31b151d",
+        "name" : "Does it have more records to fetch?",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 4
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "c1f77871-0198-1000-fd1f-3067439cfa99",
+        "name" : "Check if the query has moreData",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "c1f7787b-0198-1000-8fa9-206273e1dbdf",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "Response" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "c1f77870-0198-1000-3ee5-697bcd61c0da",
+        "name" : "InvokeHTTP",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 1
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "c1f77872-0198-1000-ac99-95a5e135937d",
+        "name" : "AttributesToJSON",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "c1f7787c-0198-1000-8321-9e6875cb5fea",
+      "labelIndex" : 1,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "c1f77874-0198-1000-c3ed-d4196a56bb2a",
+        "name" : "UpdateAttribute",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "c1f77870-0198-1000-3ee5-697bcd61c0da",
+        "name" : "InvokeHTTP",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "c1f7787d-0198-1000-e856-4441fce7d9e4",
+      "labelIndex" : 1,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "c1f77875-0198-1000-1e90-616b0426d46c",
+        "name" : "JSLTTransformJSON",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "c1f77876-0198-1000-3383-7007c31b151d",
+        "name" : "Does it have more records to fetch?",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "c1f7787e-0198-1000-dbfb-1a0d8f33bb85",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "matched" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "c1f77871-0198-1000-fd1f-3067439cfa99",
+        "name" : "Check if the query has moreData",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 3
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "c1f7786f-0198-1000-8bd1-5c03c24c13b8",
+        "name" : "JSLTTransformJSON",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "c1f7787f-0198-1000-1fa6-7805b3b1ccbc",
+      "labelIndex" : 1,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "Response" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "c1f77870-0198-1000-3ee5-697bcd61c0da",
+        "name" : "InvokeHTTP",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    } ],
+    "controllerServices" : [ ],
+    "defaultBackPressureDataSizeThreshold" : "1 GB",
+    "defaultBackPressureObjectThreshold" : 10000,
+    "defaultFlowFileExpiration" : "0 sec",
+    "executionEngine" : "INHERITED",
+    "externalControllerServiceReferences" : { },
+    "flowFileConcurrency" : "UNBOUNDED",
+    "flowFileOutboundPolicy" : "STREAM_WHEN_AVAILABLE",
+    "funnels" : [ ],
+    "identifier" : "flow-contents-group",
+    "inputPorts" : [ {
+      "allowRemoteAccess" : false,
+      "componentType" : "INPUT_PORT",
+      "concurrentlySchedulableTaskCount" : 1,
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "f90cbb33-7682-39f8-b3ae-7673bd1a3219",
+      "name" : "Passthrough Entry Point",
+      "portFunction" : "STANDARD",
+      "position" : {
+        "x" : -416.0,
+        "y" : -768.0
+      },
+      "scheduledState" : "ENABLED",
+      "type" : "INPUT_PORT"
+    } ],
+    "labels" : [ ],
+    "maxConcurrentTasks" : 1,
+    "name" : "Passthrough (NETSUITE)",
+    "outputPorts" : [ {
+      "allowRemoteAccess" : false,
+      "componentType" : "OUTPUT_PORT",
+      "concurrentlySchedulableTaskCount" : 1,
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "1f0fe48b-dadf-3181-bbda-6e3612dbd005",
+      "name" : "Passthrough Exit Port",
+      "portFunction" : "STANDARD",
+      "position" : {
+        "x" : -440.0,
+        "y" : 704.0
+      },
+      "scheduledState" : "ENABLED",
+      "type" : "OUTPUT_PORT"
+    } ],
+    "parameterContextName" : "skinlaundry_locations_param_context",
+    "position" : {
+      "x" : 0.0,
+      "y" : 0.0
+    },
+    "processGroups" : [ ],
+    "processors" : [ {
+      "autoTerminatedRelationships" : [ "failure", "unmatched" ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-standard-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.5.0"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "c1f7786e-0198-1000-382b-f33d3cbfa708",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "EvaluateJsonPath",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : -488.0,
+        "y" : 480.0
+      },
+      "properties" : {
+        "Destination" : "flowfile-content",
+        "Max String Length" : "20 MB",
+        "Return Type" : "auto-detect",
+        "Null Value Representation" : "empty string",
+        "trialbalance" : "$.trialbalance",
+        "Path Not Found Behavior" : "ignore"
+      },
+      "propertyDescriptors" : {
+        "Destination" : {
+          "displayName" : "Destination",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Destination",
+          "sensitive" : false
+        },
+        "Max String Length" : {
+          "displayName" : "Max String Length",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Max String Length",
+          "sensitive" : false
+        },
+        "Return Type" : {
+          "displayName" : "Return Type",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Return Type",
+          "sensitive" : false
+        },
+        "Null Value Representation" : {
+          "displayName" : "Null Value Representation",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Null Value Representation",
+          "sensitive" : false
+        },
+        "trialbalance" : {
+          "displayName" : "trialbalance",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "trialbalance",
+          "sensitive" : false
+        },
+        "Path Not Found Behavior" : {
+          "displayName" : "Path Not Found Behavior",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Path Not Found Behavior",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.standard.EvaluateJsonPath",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ "failure" ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-jslt-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.5.0"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "c1f7786f-0198-1000-8bd1-5c03c24c13b8",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "JSLTTransformJSON",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : -500.00004143826936,
+        "y" : 240.00000603118383
+      },
+      "properties" : {
+        "jslt-transform-pretty_print" : "false",
+        "jslt-transform-result-filter" : ". != null and . != {} and . != []",
+        "jslt-transform-transformation" : "{\n  \"trialbalance\": [\n    for (.response.items)\n    let opening_debit   = if (.op_dr) number(.op_dr) else 0\n    let opening_credit   = if (.op_cr) number(.op_cr) else 0\n    let closing_debit   = if (.closing_debit) number(.closing_debit) else 0\n    let closing_credit  = if (.closing_credit) number(.closing_credit) else 0\n    let transaction_debit   = if (.trnx_dr) number(.trnx_dr) else 0\n    let transaction_credit   = if (.trnx_cr) number(.trnx_cr) else 0\n    let transaction     = $transaction_debit - $transaction_credit\n    let raw_endbalance  = $closing_debit - $closing_credit\n    let endbalance      = round($raw_endbalance * 100) / 100\n    let raw_startbalance = $opening_debit - $opening_credit\n    let startbalance      = round($raw_startbalance * 100) / 100\n   {\n      \"glcode\":         .acctnumber,\n      \"transaction\":    $transaction,\n      \"audit_entries\":  0,\n      \"closing_amount\": $endbalance,\n      \"opening_amount\": $startbalance,\n      \"location\":       .subsidiaryname,\n      \"currency\":       \"dollar\"\n    }\n  ]\n}",
+        "jslt-transform-cache-size" : "1",
+        "jslt-transform-transformation-strategy" : "ENTIRE_FLOWFILE"
+      },
+      "propertyDescriptors" : {
+        "jslt-transform-pretty_print" : {
+          "displayName" : "Pretty Print",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "jslt-transform-pretty_print",
+          "sensitive" : false
+        },
+        "jslt-transform-result-filter" : {
+          "displayName" : "Transform Result Filter",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "jslt-transform-result-filter",
+          "sensitive" : false
+        },
+        "jslt-transform-transformation" : {
+          "displayName" : "JSLT Transformation",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "jslt-transform-transformation",
+          "resourceDefinition" : {
+            "cardinality" : "SINGLE",
+            "resourceTypes" : [ "FILE", "TEXT" ]
+          },
+          "sensitive" : false
+        },
+        "jslt-transform-cache-size" : {
+          "displayName" : "Transform Cache Size",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "jslt-transform-cache-size",
+          "sensitive" : false
+        },
+        "jslt-transform-transformation-strategy" : {
+          "displayName" : "Transformation Strategy",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "jslt-transform-transformation-strategy",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.jslt.JSLTTransformJSON",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ "Failure", "No Retry", "Original", "Retry" ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-standard-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.5.0"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "c1f77870-0198-1000-3ee5-697bcd61c0da",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "InvokeHTTP",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : -500.00004143826936,
+        "y" : 32.00000603118383
+      },
+      "properties" : {
+        "Request Content-Encoding" : "DISABLED",
+        "Request Multipart Form-Data Filename Enabled" : "true",
+        "Request Chunked Transfer-Encoding Enabled" : "false",
+        "HTTP/2 Disabled" : "False",
+        "Connection Timeout" : "60 secs",
+        "Response Cookie Strategy" : "DISABLED",
+        "Authorization" : "#{account_token_merge}",
+        "Socket Read Timeout" : "60 secs",
+        "Socket Idle Connections" : "5",
+        "Request Body Enabled" : "true",
+        "OAuth2 Access Token Refresh Strategy" : "ON_TOKEN_EXPIRATION",
+        "HTTP URL" : "https://api.merge.dev/api/accounting/v1/passthrough",
+        "Socket Idle Timeout" : "5 mins",
+        "Response Redirects Enabled" : "True",
+        "Socket Write Timeout" : "60 secs",
+        "Response FlowFile Naming Strategy" : "RANDOM",
+        "Response Cache Enabled" : "false",
+        "Request Date Header Enabled" : "True",
+        "Request Failure Penalization Enabled" : "false",
+        "Response Body Attribute Size" : "256",
+        "Response Generation Required" : "true",
+        "Response Header Request Attributes Enabled" : "false",
+        "HTTP Method" : "POST",
+        "Request Content-Type" : "${mime.type}",
+        "X-ACCOUNT-TOKEN" : "#{account_token_merge_erp}",
+        "Request Digest Authentication Enabled" : "false",
+        "Response Cache Size" : "10MB",
+        "Response Body Ignored" : "false"
+      },
+      "propertyDescriptors" : {
+        "Request Content-Encoding" : {
+          "displayName" : "Request Content-Encoding",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Request Content-Encoding",
+          "sensitive" : false
+        },
+        "proxy-configuration-service" : {
+          "displayName" : "Proxy Configuration Service",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "proxy-configuration-service",
+          "sensitive" : false
+        },
+        "Request Multipart Form-Data Filename Enabled" : {
+          "displayName" : "Request Multipart Form-Data Filename Enabled",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Request Multipart Form-Data Filename Enabled",
+          "sensitive" : false
+        },
+        "Request Chunked Transfer-Encoding Enabled" : {
+          "displayName" : "Request Chunked Transfer-Encoding Enabled",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Request Chunked Transfer-Encoding Enabled",
+          "sensitive" : false
+        },
+        "Response Header Request Attributes Prefix" : {
+          "displayName" : "Response Header Request Attributes Prefix",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Response Header Request Attributes Prefix",
+          "sensitive" : false
+        },
+        "HTTP/2 Disabled" : {
+          "displayName" : "HTTP/2 Disabled",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "HTTP/2 Disabled",
+          "sensitive" : false
+        },
+        "Connection Timeout" : {
+          "displayName" : "Connection Timeout",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Connection Timeout",
+          "sensitive" : false
+        },
+        "Response Cookie Strategy" : {
+          "displayName" : "Response Cookie Strategy",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Response Cookie Strategy",
+          "sensitive" : false
+        },
+        "Authorization" : {
+          "displayName" : "Authorization",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "Authorization",
+          "sensitive" : false
+        },
+        "Request Password" : {
+          "displayName" : "Request Password",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Request Password",
+          "sensitive" : true
+        },
+        "Socket Read Timeout" : {
+          "displayName" : "Socket Read Timeout",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Socket Read Timeout",
+          "sensitive" : false
+        },
+        "Socket Idle Connections" : {
+          "displayName" : "Socket Idle Connections",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Socket Idle Connections",
+          "sensitive" : false
+        },
+        "Request Body Enabled" : {
+          "displayName" : "Request Body Enabled",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Request Body Enabled",
+          "sensitive" : false
+        },
+        "OAuth2 Access Token Refresh Strategy" : {
+          "displayName" : "OAuth2 Access Token Refresh Strategy",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "OAuth2 Access Token Refresh Strategy",
+          "sensitive" : false
+        },
+        "HTTP URL" : {
+          "displayName" : "HTTP URL",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "HTTP URL",
+          "sensitive" : false
+        },
+        "Request OAuth2 Access Token Provider" : {
+          "displayName" : "Request OAuth2 Access Token Provider",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "Request OAuth2 Access Token Provider",
+          "sensitive" : false
+        },
+        "Socket Idle Timeout" : {
+          "displayName" : "Socket Idle Timeout",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Socket Idle Timeout",
+          "sensitive" : false
+        },
+        "Response Redirects Enabled" : {
+          "displayName" : "Response Redirects Enabled",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Response Redirects Enabled",
+          "sensitive" : false
+        },
+        "Socket Write Timeout" : {
+          "displayName" : "Socket Write Timeout",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Socket Write Timeout",
+          "sensitive" : false
+        },
+        "Request Header Attributes Pattern" : {
+          "displayName" : "Request Header Attributes Pattern",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Request Header Attributes Pattern",
+          "sensitive" : false
+        },
+        "Response FlowFile Naming Strategy" : {
+          "displayName" : "Response FlowFile Naming Strategy",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Response FlowFile Naming Strategy",
+          "sensitive" : false
+        },
+        "Response Cache Enabled" : {
+          "displayName" : "Response Cache Enabled",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Response Cache Enabled",
+          "sensitive" : false
+        },
+        "Request Date Header Enabled" : {
+          "displayName" : "Request Date Header Enabled",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Request Date Header Enabled",
+          "sensitive" : false
+        },
+        "Request Failure Penalization Enabled" : {
+          "displayName" : "Request Failure Penalization Enabled",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Request Failure Penalization Enabled",
+          "sensitive" : false
+        },
+        "Response Body Attribute Size" : {
+          "displayName" : "Response Body Attribute Size",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Response Body Attribute Size",
+          "sensitive" : false
+        },
+        "SSL Context Service" : {
+          "displayName" : "SSL Context Service",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "SSL Context Service",
+          "sensitive" : false
+        },
+        "Response Generation Required" : {
+          "displayName" : "Response Generation Required",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Response Generation Required",
+          "sensitive" : false
+        },
+        "Request User-Agent" : {
+          "displayName" : "Request User-Agent",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Request User-Agent",
+          "sensitive" : false
+        },
+        "Response Header Request Attributes Enabled" : {
+          "displayName" : "Response Header Request Attributes Enabled",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Response Header Request Attributes Enabled",
+          "sensitive" : false
+        },
+        "HTTP Method" : {
+          "displayName" : "HTTP Method",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "HTTP Method",
+          "sensitive" : false
+        },
+        "Request Username" : {
+          "displayName" : "Request Username",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Request Username",
+          "sensitive" : false
+        },
+        "Request Content-Type" : {
+          "displayName" : "Request Content-Type",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Request Content-Type",
+          "sensitive" : false
+        },
+        "X-ACCOUNT-TOKEN" : {
+          "displayName" : "X-ACCOUNT-TOKEN",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "X-ACCOUNT-TOKEN",
+          "sensitive" : false
+        },
+        "Response Body Attribute Name" : {
+          "displayName" : "Response Body Attribute Name",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Response Body Attribute Name",
+          "sensitive" : false
+        },
+        "Request Digest Authentication Enabled" : {
+          "displayName" : "Request Digest Authentication Enabled",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Request Digest Authentication Enabled",
+          "sensitive" : false
+        },
+        "Request Multipart Form-Data Name" : {
+          "displayName" : "Request Multipart Form-Data Name",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Request Multipart Form-Data Name",
+          "sensitive" : false
+        },
+        "Response Cache Size" : {
+          "displayName" : "Response Cache Size",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Response Cache Size",
+          "sensitive" : false
+        },
+        "Response Body Ignored" : {
+          "displayName" : "Response Body Ignored",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Response Body Ignored",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.standard.InvokeHTTP",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ "failure", "unmatched" ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-standard-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.5.0"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "c1f77871-0198-1000-fd1f-3067439cfa99",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "Check if the query has moreData",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 147.99995856173064,
+        "y" : -127.99999396881617
+      },
+      "properties" : {
+        "Destination" : "flowfile-attribute",
+        "Max String Length" : "20 MB",
+        "Return Type" : "auto-detect",
+        "hasMore" : "$.response.hasMore",
+        "Null Value Representation" : "empty string",
+        "Path Not Found Behavior" : "ignore"
+      },
+      "propertyDescriptors" : {
+        "Destination" : {
+          "displayName" : "Destination",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Destination",
+          "sensitive" : false
+        },
+        "Max String Length" : {
+          "displayName" : "Max String Length",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Max String Length",
+          "sensitive" : false
+        },
+        "Return Type" : {
+          "displayName" : "Return Type",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Return Type",
+          "sensitive" : false
+        },
+        "hasMore" : {
+          "displayName" : "hasMore",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "hasMore",
+          "sensitive" : false
+        },
+        "Null Value Representation" : {
+          "displayName" : "Null Value Representation",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Null Value Representation",
+          "sensitive" : false
+        },
+        "Path Not Found Behavior" : {
+          "displayName" : "Path Not Found Behavior",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Path Not Found Behavior",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.standard.EvaluateJsonPath",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ "failure" ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-standard-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.5.0"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "c1f77872-0198-1000-ac99-95a5e135937d",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "AttributesToJSON",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : -500.00004143826936,
+        "y" : -399.99999396881617
+      },
+      "properties" : {
+        "Destination" : "flowfile-content",
+        "Null Value" : "false",
+        "Attributes List" : "body",
+        "Pretty Print" : "true",
+        "Include Core Attributes" : "true",
+        "JSON Handling Strategy" : "NESTED"
+      },
+      "propertyDescriptors" : {
+        "attributes-to-json-regex" : {
+          "displayName" : "Attributes Regular Expression",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "attributes-to-json-regex",
+          "sensitive" : false
+        },
+        "Destination" : {
+          "displayName" : "Destination",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Destination",
+          "sensitive" : false
+        },
+        "Null Value" : {
+          "displayName" : "Null Value",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Null Value",
+          "sensitive" : false
+        },
+        "Attributes List" : {
+          "displayName" : "Attributes List",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Attributes List",
+          "sensitive" : false
+        },
+        "Pretty Print" : {
+          "displayName" : "Pretty Print",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Pretty Print",
+          "sensitive" : false
+        },
+        "Include Core Attributes" : {
+          "displayName" : "Include Core Attributes",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Include Core Attributes",
+          "sensitive" : false
+        },
+        "JSON Handling Strategy" : {
+          "displayName" : "JSON Handling Strategy",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "JSON Handling Strategy",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.standard.AttributesToJSON",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ "failure" ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-jslt-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.5.0"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "c1f77873-0198-1000-c5ca-d839ecab421b",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "Update the request body ",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 147.99995856173064,
+        "y" : 360.00000603118383
+      },
+      "properties" : {
+        "jslt-transform-pretty_print" : "false",
+        "jslt-transform-result-filter" : ". != null and . != {} and . != []",
+        "jslt-transform-transformation" : "let nextLink = [for (.response.links)(.href) if (.rel == \"next\") ]\n{\n  \"method\": .method,\n  \"path\": split($nextLink[0],\"/services\")[1],\n  \"headers\": {\n    \"Prefer\": \"transient\"\n  },\n  \"data\": {\n    \"q\": \"SELECT S.name AS subsidiaryname, TAL.account, acc.acctnumber, SUM(TAL.DEBIT) AS CLOSING_DEBIT, SUM(TAL.CREDIT) AS CLOSING_CREDIT, NVL(TRNX.TRNX_DR, 0) AS TRNX_DR, NVL(TRNX.TRNX_CR, 0) AS TRNX_CR, SUM(TAL.DEBIT) - NVL(TRNX.TRNX_DR, 0) AS OP_DR, SUM(TAL.CREDIT) - NVL(TRNX.TRNX_CR, 0) AS OP_CR FROM transaction TR INNER JOIN transactionLine TL ON TR.ID = TL.transaction INNER JOIN TransactionAccountingLine TAL ON TL.ID = TAL.transactionline AND TAL.transaction = TL.transaction LEFT JOIN account ACC ON TAL.account = ACC.ID LEFT JOIN subsidiary S ON TL.subsidiary = S.id LEFT JOIN (SELECT TL.subsidiary AS TRNX_SUBSIDIARY, TAL.account AS TRNX_ACCOUNT, SUM(TAL.DEBIT) AS TRNX_DR, SUM(TAL.CREDIT) AS TRNX_CR FROM transaction TR INNER JOIN transactionLine TL ON TR.ID = TL.transaction INNER JOIN TransactionAccountingLine TAL ON TL.ID = TAL.transactionline AND TAL.transaction = TL.transaction LEFT JOIN account ACC ON TAL.account = ACC.ID WHERE TR.trandate >= '06/01/2025' AND TR.trandate <= '06/30/2025' AND TAL.amount IS NOT NULL AND TR.posting = 'T' GROUP BY TL.subsidiary, TAL.account) TRNX ON TRNX.TRNX_SUBSIDIARY = TL.subsidiary AND TRNX.TRNX_ACCOUNT = TAL.account WHERE TR.trandate <= '06/30/2025' AND TAL.amount IS NOT NULL AND TR.posting = 'T' GROUP BY S.name, TAL.account, acc.acctnumber, TRNX.TRNX_DR, TRNX.TRNX_CR ORDER BY S.name, acc.acctnumber;\"\n  },\n  \"request_format\": \"JSON\"\n}",
+        "jslt-transform-cache-size" : "1",
+        "jslt-transform-transformation-strategy" : "ENTIRE_FLOWFILE"
+      },
+      "propertyDescriptors" : {
+        "jslt-transform-pretty_print" : {
+          "displayName" : "Pretty Print",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "jslt-transform-pretty_print",
+          "sensitive" : false
+        },
+        "jslt-transform-result-filter" : {
+          "displayName" : "Transform Result Filter",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "jslt-transform-result-filter",
+          "sensitive" : false
+        },
+        "jslt-transform-transformation" : {
+          "displayName" : "JSLT Transformation",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "jslt-transform-transformation",
+          "resourceDefinition" : {
+            "cardinality" : "SINGLE",
+            "resourceTypes" : [ "FILE", "TEXT" ]
+          },
+          "sensitive" : false
+        },
+        "jslt-transform-cache-size" : {
+          "displayName" : "Transform Cache Size",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "jslt-transform-cache-size",
+          "sensitive" : false
+        },
+        "jslt-transform-transformation-strategy" : {
+          "displayName" : "Transformation Strategy",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "jslt-transform-transformation-strategy",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.jslt.JSLTTransformJSON",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-update-attribute-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.5.0"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "c1f77874-0198-1000-c3ed-d4196a56bb2a",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "UpdateAttribute",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : -492.00004143826936,
+        "y" : -591.9999939688162
+      },
+      "properties" : {
+        "Store State" : "Do not store state",
+        "canonical-value-lookup-cache-size" : "100",
+        "body" : "{\n\"method\": \"POST\",\n\"path\": \"/rest/query/v1/suiteql\",\n\"headers\": {\n\"Prefer\": \"transient\"\n},\n\"data\":  {\"q\":\"SELECT S.name AS subsidiaryname, TAL.account, acc.acctnumber, SUM(TAL.DEBIT) AS CLOSING_DEBIT, SUM(TAL.CREDIT) AS CLOSING_CREDIT, NVL(TRNX.TRNX_DR, 0) AS TRNX_DR, NVL(TRNX.TRNX_CR, 0) AS TRNX_CR, SUM(TAL.DEBIT) - NVL(TRNX.TRNX_DR, 0) AS OP_DR, SUM(TAL.CREDIT) - NVL(TRNX.TRNX_CR, 0) AS OP_CR FROM transaction TR INNER JOIN transactionLine TL ON TR.ID = TL.transaction INNER JOIN TransactionAccountingLine TAL ON TL.ID = TAL.transactionline AND TAL.transaction = TL.transaction LEFT JOIN account ACC ON TAL.account = ACC.ID LEFT JOIN subsidiary S ON TL.subsidiary = S.id LEFT JOIN (SELECT TL.subsidiary AS TRNX_SUBSIDIARY, TAL.account AS TRNX_ACCOUNT, SUM(TAL.DEBIT) AS TRNX_DR, SUM(TAL.CREDIT) AS TRNX_CR FROM transaction TR INNER JOIN transactionLine TL ON TR.ID = TL.transaction INNER JOIN TransactionAccountingLine TAL ON TL.ID = TAL.transactionline AND TAL.transaction = TL.transaction LEFT JOIN account ACC ON TAL.account = ACC.ID WHERE TR.trandate >= '06/01/2025' AND TR.trandate <= '06/30/2025' AND TAL.amount IS NOT NULL AND TR.posting = 'T' GROUP BY TL.subsidiary, TAL.account) TRNX ON TRNX.TRNX_SUBSIDIARY = TL.subsidiary AND TRNX.TRNX_ACCOUNT = TAL.account WHERE TR.trandate <= '06/30/2025' AND TAL.amount IS NOT NULL AND TR.posting = 'T' GROUP BY S.name, TAL.account, acc.acctnumber, TRNX.TRNX_DR, TRNX.TRNX_CR ORDER BY S.name, acc.acctnumber;\"},\n\"request_format\": \"JSON\"\n}"
+      },
+      "propertyDescriptors" : {
+        "Delete Attributes Expression" : {
+          "displayName" : "Delete Attributes Expression",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Delete Attributes Expression",
+          "sensitive" : false
+        },
+        "Store State" : {
+          "displayName" : "Store State",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Store State",
+          "sensitive" : false
+        },
+        "canonical-value-lookup-cache-size" : {
+          "displayName" : "Cache Value Lookup Cache Size",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "canonical-value-lookup-cache-size",
+          "sensitive" : false
+        },
+        "Stateful Variables Initial Value" : {
+          "displayName" : "Stateful Variables Initial Value",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Stateful Variables Initial Value",
+          "sensitive" : false
+        },
+        "body" : {
+          "displayName" : "body",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "body",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 25,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.attributes.UpdateAttribute",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ "failure" ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-jslt-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.5.0"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "c1f77875-0198-1000-1e90-616b0426d46c",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "JSLTTransformJSON",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : -500.00004143826936,
+        "y" : -207.99999396881617
+      },
+      "properties" : {
+        "jslt-transform-pretty_print" : "false",
+        "jslt-transform-result-filter" : ". != null and . != {} and . != []",
+        "jslt-transform-transformation" : "{\n  \"method\" : .body.method,\n  \"path\" : .body.path,\n  \"request_format\" : .body.request_format,\n  \"headers\" : .body.headers,\n  \"data\" : .body.data\n}",
+        "jslt-transform-cache-size" : "1",
+        "jslt-transform-transformation-strategy" : "ENTIRE_FLOWFILE"
+      },
+      "propertyDescriptors" : {
+        "jslt-transform-pretty_print" : {
+          "displayName" : "Pretty Print",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "jslt-transform-pretty_print",
+          "sensitive" : false
+        },
+        "jslt-transform-result-filter" : {
+          "displayName" : "Transform Result Filter",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "jslt-transform-result-filter",
+          "sensitive" : false
+        },
+        "jslt-transform-transformation" : {
+          "displayName" : "JSLT Transformation",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "jslt-transform-transformation",
+          "resourceDefinition" : {
+            "cardinality" : "SINGLE",
+            "resourceTypes" : [ "FILE", "TEXT" ]
+          },
+          "sensitive" : false
+        },
+        "jslt-transform-cache-size" : {
+          "displayName" : "Transform Cache Size",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "jslt-transform-cache-size",
+          "sensitive" : false
+        },
+        "jslt-transform-transformation-strategy" : {
+          "displayName" : "Transformation Strategy",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "jslt-transform-transformation-strategy",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.jslt.JSLTTransformJSON",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ "unmatched" ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-standard-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.5.0"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "c1f77876-0198-1000-3383-7007c31b151d",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "Does it have more records to fetch?",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 147.99995856173064,
+        "y" : 112.00000603118383
+      },
+      "properties" : {
+        "Routing Strategy" : "Route to Property name",
+        "hasMore" : "${hasMore:equals(\"true\")}"
+      },
+      "propertyDescriptors" : {
+        "Routing Strategy" : {
+          "displayName" : "Routing Strategy",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Routing Strategy",
+          "sensitive" : false
+        },
+        "hasMore" : {
+          "displayName" : "hasMore",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "hasMore",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 25,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.standard.RouteOnAttribute",
+      "yieldDuration" : "1 sec"
+    } ],
+    "remoteProcessGroups" : [ ],
+    "scheduledState" : "ENABLED",
+    "statelessFlowTimeout" : "1 min"
+  },
+  "flowEncodingVersion" : "1.0",
+  "latest" : false,
+  "parameterContexts" : {
+    "skinlaundry_tb_param_context" : {
+      "componentType" : "PARAMETER_CONTEXT",
+      "inheritedParameterContexts" : [ ],
+      "name" : "skinlaundry_tb_param_context",
+      "parameters" : [ {
+        "description" : "Account token to enable comms with Merge API",
+        "name" : "account_token",
+        "provided" : false,
+        "sensitive" : true
+      }, {
+        "description" : "Account token ERP (Netsuite)",
+        "name" : "account_token_erp",
+        "provided" : false,
+        "sensitive" : true
+      }, {
+        "description" : "",
+        "name" : "account_token_merge",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "Bearer 59m83p7Pz38rkE62S7LuKk23bOt3vEqKZ5g_8tcvgLmzYVaGiOzKpA"
+      }, {
+        "description" : "",
+        "name" : "account_token_merge_erp",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "0S9xcsDIK7vYsoqurW8ORtw3S96SoCNUZpnyP7v_yu4qzqYqdp2ZmQ"
+      }, {
+        "description" : "Client DB code",
+        "name" : "client_db",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "c10000000088"
+      }, {
+        "description" : "Collection to save the activity logs.",
+        "name" : "collection",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "bookclosure_dataprocessing_matrix"
+      }, {
+        "description" : "",
+        "name" : "company",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "skinlaundry"
+      }, {
+        "description" : "Root directory to pick the record",
+        "name" : "config_directory",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "/opt/config"
+      }, {
+        "description" : "",
+        "name" : "cursor",
+        "provided" : false,
+        "sensitive" : false
+      }, {
+        "description" : "DB query to pick the trialbalance",
+        "name" : "db_query",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "{\"q\":\"SELECT TL.subsidiary, TAL.account, acc.acctnumber, SUM(TAL.DEBIT) CLOSING_DEBIT, SUM(TAL.CREDIT) CLOSING_CREDIT, NVL(TRNX.TRNX_DR, 0) TRNX_DR, NVL(TRNX.TRNX_CR, 0) TRNX_CR, SUM(TAL.DEBIT) - NVL(TRNX.TRNX_DR, 0) AS OP_DR, SUM(TAL.CREDIT) - NVL(TRNX.TRNX_CR, 0) AS OP_CR FROM transaction TR INNER JOIN transactionLine TL ON TR.ID = TL.transaction INNER JOIN TransactionAccountingLine TAL ON TL.ID = TAL.transactionline AND TAL.transaction = TL.transaction LEFT JOIN account ACC ON TAL.account = ACC.ID LEFT JOIN (SELECT TL.subsidiary AS TRNX_SUBSIDIARY, TAL.account AS TRNX_ACCOUNT, SUM(TAL.DEBIT) AS TRNX_DR, SUM(TAL.CREDIT) AS TRNX_CR FROM transaction TR INNER JOIN transactionLine TL ON TR.ID = TL.transaction INNER JOIN TransactionAccountingLine TAL ON TL.ID = TAL.transactionline AND TAL.transaction = TL.transaction LEFT JOIN account ACC ON TAL.account = ACC.ID WHERE TR.trandate >= '06/01/2025' AND TR.trandate <= '06/30/2025' AND TAL.amount IS NOT NULL AND TR.posting = 'T' AND TL.subsidiary = 3 GROUP BY TL.subsidiary, TAL.account ORDER BY TL.subsidiary, TAL.account) TRNX ON TRNX.TRNX_SUBSIDIARY = TL.subsidiary AND TRNX.TRNX_ACCOUNT = TAL.account WHERE TR.trandate <= '06/30/2025' AND TAL.amount IS NOT NULL AND TR.posting = 'T' AND TL.subsidiary = 3 GROUP BY TL.subsidiary, TAL.account, acc.acctnumber, TRNX.TRNX_DR, TRNX.TRNX_CR ORDER BY TL.subsidiary, acc.acctnumber;\"}, \"request_format\": \"JSON\" }"
+      }, {
+        "description" : "",
+        "name" : "erp_type",
+        "provided" : false,
+        "sensitive" : false
+      }, {
+        "description" : "Config file name for trial balance",
+        "name" : "filename",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "config-skinlaundry-tb.json"
+      }, {
+        "description" : "Log JSLT Transformer",
+        "name" : "log_jslt_generator",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "[\n    {\n      \n      \"request_url\": .request_url,\n      \"type\": .type,\n      \"subtype\": .subtype,\n      \"request_type\": .request_type,\n      \"erp_type\": .erp_type,\n      \"transaction_type\": .transaction_type,\n      \"method\": .method,\n      \"path\": .path,\n      \"headers\": .headers,\n      \"request_method\": .request_method,\n      \"param_differntial\": .param_differntial,\n      \"cursor\": .cursor,\n      \"request_format\": .request_format,\n      \"syncstatus\": \"inprogress\",\n      \"synctype\": \"auto\",\n      \"steps\": [\n        {\n          \"component\": \"filelisting\",\n          \"component_id\": \"FetchFile\",\n          \"status\": \"done\"\n        }\n      ]\n    }\n]"
+      }, {
+        "description" : "",
+        "name" : "mongo-uri",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "mongodb+srv://staginguser:3NLRxXCgZ6Cv2S5W@staging-backup.pwzym.mongodb.net/"
+      }, {
+        "description" : "",
+        "name" : "param_differential",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "?"
+      }, {
+        "description" : "",
+        "name" : "request_method",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "POST"
+      }, {
+        "description" : "",
+        "name" : "request_type",
+        "provided" : false,
+        "sensitive" : false
+      }, {
+        "description" : "Request URL",
+        "name" : "request_url",
+        "provided" : false,
+        "sensitive" : false
+      }, {
+        "description" : "",
+        "name" : "runschedule",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "120 mins"
+      }, {
+        "description" : "",
+        "name" : "subtype",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "passthrough"
+      }, {
+        "description" : "",
+        "name" : "sync_status",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "start"
+      }, {
+        "description" : "",
+        "name" : "sync_type",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "auto"
+      }, {
+        "description" : "",
+        "name" : "transaction_type",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "tb"
+      }, {
+        "description" : "",
+        "name" : "type",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "merge"
+      } ]
+    },
+    "skinlaundry_locations_param_context" : {
+      "componentType" : "PARAMETER_CONTEXT",
+      "inheritedParameterContexts" : [ "skinlaundry_tb_param_context" ],
+      "name" : "skinlaundry_locations_param_context",
+      "parameters" : [ {
+        "description" : "",
+        "name" : "transaction_type",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "locations"
+      } ]
+    }
+  },
+  "parameterProviders" : { },
+  "snapshotMetadata" : {
+    "author" : "admin",
+    "flowIdentifier" : "Passthrough-netsuite-skinlaundry",
+    "timestamp" : 1755601077792
+  }
 }
