@@ -1,0 +1,11 @@
+{
+  "flow" : {
+    "createdTimestamp" : 1755601076834,
+    "description" : "",
+    "identifier" : "Passthrough-netsuite-skinlaundry",
+    "lastModifiedTimestamp" : 1755601076834,
+    "name" : "Passthrough-netsuite-skinlaundry",
+    "versionCount" : 0
+  },
+  "latest" : false
+}
